@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mini Js Datatype App</title>
+    <style>
+      button {
+        border-radius: 15px;
+        padding: 15px;
+        margin: 15px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h2></h2>
+
+      <button onclick="obj()">Objects</button>
+      <!-- creating a button and adding a eventlistner  -->
+      <button onclick="arr()">Arrays</button>
+      <!-- creating a button and adding a eventlistner -->
+      <button onclick="fun()">Functions</button>
+      <!-- creating a button and adding a eventlistner -->
+      <button onclick="str()">Strings</button>
+      <!-- creating a button and adding a eventlistner -->
+      <button onclick="num()">Numbers</button>
+      <!-- creating a button and adding a eventlistner -->
+      <button onclick="nul()">null</button>
+      <!-- creating a button and adding a eventlistner -->
+      <button onclick="undef()">Undefined</button>
+    </div>
+  </body>
+</html>
+
+<script>
+  // calling the object function
+  function obj() {
+    document.querySelector("h2").innerHTML = "";
+    // selecting the tag
+
+    var p = document.createElement("p");
+    // creating a element p
+    p.textContent =
+      "1. In JavaScript, an object is a standalone entity, with properties and type.";
+    // adding the textContent to the element
+
+    var p1 = document.createElement("p");
+    // creating a element p
+    p1.textContent =
+      "2. Compare it with a cup, for example. A cup is an object, with properties.";
+    // adding the textContent to the element
+
+    var p2 = document.createElement("p");
+    // creating a element p
+    p2.textContent =
+      "3. A cup has a color, a design, weight, a material it is made of, etc. ";
+    // adding the textContent to the element
+
+    document.querySelector("h2").append(p, p1, p2);
+    // appending all the things to tag
+  }
+
+  // calling the array function
+  function arr() {
+    document.querySelector("h2").innerHTML = "";
+    // selecting the tag
+
+    var p = document.createElement("p");
+    // creating a element p
+    p.textContent =
+      "1. In JavaScript, an array is an ordered list of values. Each value is called an element specified by an index.";
+    // adding the textContent to the element
+
+    var p1 = document.createElement("p");
+    // creating a element p
+    p1.textContent =
+      "2. First, an array can hold values of mixed types. For example, you can have an array that stores elements with the types number, string, and boolean.";
+    // adding the textContent to the element
+
+    var p2 = document.createElement("p");
+    // creating a element p
+    p2.textContent =
+      "3. Second, the size of an array is dynamic and auto-growing. In other words, you don’t need to specify the array size upfront.";
+    // adding the textContent to the element
+
+    document.querySelector("h2").append(p, p1, p2);
+    // appending all the things to tag
+  }
+
+  // calling the function
+  function fun() {
+    document.querySelector("h2").innerHTML = "";
+    //  selecting the tag
+
+    var p = document.createElement("p");
+    // creating a element p
+    p.textContent =
+      "1. Functions are one of the fundamental building blocks in JavaScript.";
+    // adding the textContent to the element
+
+    var p1 = document.createElement("p");
+    // creating a element p
+    p1.textContent =
+      "2. A list of parameters to the function, enclosed in parentheses and separated by commas.";
+    // adding the textContent to the element
+
+    var p2 = document.createElement("p");
+    // creating a element p
+    p2.textContent =
+      "3. The JavaScript statements that define the function, enclosed in curly brackets. ";
+    // adding the textContent to the element
+
+    document.querySelector("h2").append(p, p1, p2);
+    // appending all the things to tag
+  }
+
+  // calling the string function
+  function str() {
+    document.querySelector("h2").innerHTML = "";
+    //  selecting the tag
+
+    var p = document.createElement("p");
+    // creating a element p
+    p.textContent =
+      "1. String is a primitive data type in JavaScript. A string is textual content. It must be enclosed in single or double quotation marks.";
+    // adding the textContent to the element
+
+    var p1 = document.createElement("p");
+    // creating a element p
+    p1.textContent =
+      "2. String value can be assigned to a variable using equal to (=) operator.";
+    // adding the textContent to the element
+
+    var p2 = document.createElement("p");
+    // creating a element p
+    p2.textContent =
+      "3. A string can also be treated like zero index based character array.";
+    // adding the textContent to the element
+
+    document.querySelector("h2").append(p, p1, p2);
+    // appending all the things to tag
+  }
+
+  // calling the number function
+  function num() {
+    document.querySelector("h2").innerHTML = "";
+    //  selecting the tag
+
+    var p = document.createElement("p");
+    // creating a element p
+    p.textContent =
+      "1. A number literal like 37 in JavaScript code is a floating-point value, not an integer. ";
+    // adding the textContent to the element
+
+    var p1 = document.createElement("p");
+    // creating a element p
+    p1.textContent =
+      "2. Here is no separate integer type in common everyday use.";
+    // adding the textContent to the element
+
+    var p2 = document.createElement("p");
+    // creating a element p
+    p2.textContent =
+      "3. Number may also be expressed in literal forms like 0b101, 0o13, 0x0A.";
+    // adding the textContent to the element
+
+    document.querySelector("h2").append(p, p1, p2);
+    // appending all the things to tag
+  }
+
+  // calling the null function
+  function nul() {
+    document.querySelector("h2").innerHTML = "";
+    //  selecting the tag
+
+    var p = document.createElement("p");
+    // creating a element p
+    p.textContent =
+      "1. Null is a keyword in JavaScript that signifies no value or nonexistence of any value. ";
+    // adding the textContent to the element
+
+    var p1 = document.createElement("p");
+    // creating a element p
+    p1.textContent =
+      "2. If you wish to shred a variable off its assigned value, you can simply assign null to it.";
+    // adding the textContent to the element
+
+    var p2 = document.createElement("p");
+    // creating a element p
+    p2.textContent =
+      "3. Besides this, like any other object, it is never implicitly assigned to a variable by JavaScript.";
+    // adding the textContent to the element
+
+    document.querySelector("h2").append(p, p1, p2);
+    // appending all the things to tag
+  }
+
+  // calling the undefined function
+  function undef() {
+    document.querySelector("h2").innerHTML = "";
+    // selecting the tag
+
+    var p = document.createElement("p");
+    // creating a element p
+    p.textContent = "1. Undefined is a property of the global object.";
+    // adding the textContent to the element
+
+    var p1 = document.createElement("p");
+    // creating a element p
+    p1.textContent = "2. That is, it is a variable in global scope.";
+    // adding the textContent to the element
+
+    var p2 = document.createElement("p");
+    // creating a element p
+    p2.textContent =
+      "3. The initial value of undefined is the primitive value .";
+    // adding the textContent to the element
+
+    document.querySelector("h2").append(p, p1, p2);
+    // appending all the things to tag
+  }
+</script>

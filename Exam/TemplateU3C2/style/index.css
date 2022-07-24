@@ -1,0 +1,39 @@
+#menu {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  margin-top: 7vh;
+}
+
+#menu > div {
+  margin: auto;
+  margin-bottom: 4vh;
+  font-weight: bold;
+}
+
+#menu > div > img {
+  width: 80%;
+}
+
+#navbar {
+  display: flex;
+  justify-content: flex-end;
+}
+#navbar > #left {
+  width: 70%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#navbar > #left > button {
+  padding-left: 15px;
+  border: 0;
+  background-color: white;
+}
+
+#navbar > #count {
+  width: 20%;
+  padding-left: 10px;
+  /* border: 1px solid red; */
+}

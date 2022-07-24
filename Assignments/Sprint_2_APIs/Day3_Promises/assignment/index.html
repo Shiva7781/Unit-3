@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McDonald</title>
+    <style>
+        #container > div{
+            display: flex;
+        }
+        input{
+            margin: 20px;
+        }
+        h3{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h3 id="order-id"></h3>
+    <div id="container" >
+        <h2>Select your food</h2>
+        <div id="food">
+            <div>
+                <input type="checkbox" id="pizza" value="pizza" onclick="foodStore(this.value)">
+                <h3>Pizza</h3>
+            </div>
+
+            <div>
+                <input type="checkbox" id="burger" value="burger" onclick="foodStore(this.value)">
+                <h3>Burger</h3>
+            </div>
+
+            <div>
+                <input type="checkbox" id="fries" value="fries" onclick="foodStore(this.value)">
+                <h3>Fries</h3>
+            </div>
+        </div>
+        
+    </div>
+    <button>Order</button>
+    <div id="image" style="display: none;">
+    <img src="" id="image-ic"></div>
+</body>
+</html>
+
+<script src="/assignment/index.js"></script>

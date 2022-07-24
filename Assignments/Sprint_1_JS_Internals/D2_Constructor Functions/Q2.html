@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show_student_details_DOM</title>
+    <style>
+      #box {
+        width: 30%;
+        height: 300px;
+        margin: 7px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        overflow: scroll;
+      }
+      #box > h4 {
+        margin-top: 15px;
+        margin-left: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <input type="text" placeholder="enter name" id="name" />
+      <input type="number" placeholder="enter number" id="number" />
+      <input type="text" id="city" placeholder="enter city" />
+      <input type="Submit" />
+    </form>
+
+    <div id="box"></div>
+  </body>
+</html>
+
+<script>
+  document.querySelector("form").addEventListener("submit", submit);
+
+  var arr = JSON.parse(localStorage.getItem("Student's_details")) || [];
+
+  function submit(event) {
+    event.preventDefault();
+
+    var name = document.querySelector("#name").value;
+
+    var number = document.querySelector("#number").value;
+
+    var city = document.querySelector("#city").value;
+
+    arr.push(new students(name, number, city));
+
+    localStorage.setItem("Student's_details", JSON.stringify(arr));
+  }
+
+  arr.map(function (item) {
+    var display_name = document.createElement("h4");
+    display_name.textContent = `Student Name :- ${item.name}`;
+
+    var display_number = document.createElement("h4");
+    display_number.textContent = `Student Number :- ${item.number}`;
+
+    var display_city = document.createElement("h4");
+    display_city.textContent = `Student City :- ${item.city}`;
+
+    var end = document.createElement("h4");
+    end.textContent = "****************************************";
+
+  
+    box.append(display_name, display_number, display_city, end);
+  });
+
+  function students(name, number, city) {
+    this.name = name;
+    this.number = number;
+    this.city = city;
+  }
+</script>

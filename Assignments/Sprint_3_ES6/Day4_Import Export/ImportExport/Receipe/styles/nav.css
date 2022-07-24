@@ -1,0 +1,40 @@
+#navbar {
+    display: flex;
+    width: 100%;
+    background-color: orange;
+    border-radius: 5px;
+    background-size: 100%;
+}
+
+#navbar > p {
+    margin-left: 15px;
+    /* background-color: brown; */
+    border-radius: 5px;
+    color: black;
+    font-size: medium;
+    font-weight: bolder;
+}
+
+#search {
+    margin-left: 500px;
+    border-radius: 10px;
+    width: 200px;
+    height: 20px;
+    padding: 5px;
+    margin-top: 9px;
+    font-weight: bolder;
+
+}
+
+#btn {
+    margin-top: 10px;
+    font-weight: bolder;
+    margin-left: 2px;
+    border-radius: 10px;
+    width: 80px;
+    height: 30px;
+    border: 0px;
+    color: white;
+    background-color: orangered;
+
+}

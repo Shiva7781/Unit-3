@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Debounce</title>
+   <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+
+    <input type = "search" placeholder="enter movie" oninput="main()" id="search_box">
+
+    <div id="moviesDisplay"></div>
+    <div id="container"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    async function search_movies() {
+
+        let movie = document.getElementById("search_box").value
+
+        let url = `https://www.omdbapi.com/?apikey=e3148ffb&s=${movie}`
+
+        try {
+
+            // let url1 = `https://www.omdbapi.com/?apikey=[yourkey]&s=${movie}`
+            let res = await fetch(url)
+
+            let data = await res.json()
+
+            // appendData(data)
+            // console.log(data);
+            return data.Search
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
+
+    async function main() {
+
+        let data = await search_movies()
+
+        if (data == undefined) {
+
+            return false
+        }
+        console.log(data);
+        appendData(data)
+    }
+
+    let movies_container = document.getElementById("moviesDisplay")
+
+    function appendData(d) {
+
+        d.forEach(function (item) {
+
+            let div = document.createElement("div")
+            div.setAttribute("class", "image_box")
+
+            let title = document.createElement('p')
+            title.textContent = item.Title
+
+            let image = document.createElement('img')
+            image.src = item.Poster
+
+            div.append(title, image)
+
+            movies_container.append(div)
+        })
+
+    }
+
+    // displaying single movie
+
+    let url2 = `http://www.omdbapi.com/?apikey=e3148ffb&s=thor`
+    let multi_movies = document.getElementById("container")
+
+    async function movies_display() {
+
+        let res = await fetch(url2)
+
+        let data2 = await res.json()
+
+        display_multimovies(data2)
+        console.log(data2);
+
+    }
+    movies_display()
+
+    function display_multimovies(d) {
+
+        d.Search.forEach(function (item) {
+
+            let card = document.createElement("div")
+            card.setAttribute("id", "multimovies")
+            card.addEventListener("click", () =>{
+
+                let arr = []
+
+                arr.push(item)
+                localStorage.setItem("clicked_movie", JSON.stringify(arr))
+
+                window.location.href = 'details.html'
+            })
+
+            let name = document.createElement("p")
+            name.textContent = item.Title
+            name.setAttribute("id", "name")
+
+            let image2 = document.createElement("img")
+            image2.src = item.Poster
+            image2.setAttribute("id", "image2")
+
+            let year = document.createElement('p')
+            year.textContent = `Year :- ${item.Year}`
+            year.setAttribute("id", "year")
+
+            card.append(image2, name, year)
+
+            document.getElementById("container").append(card)
+        })
+    }
+
+
+
+</script>

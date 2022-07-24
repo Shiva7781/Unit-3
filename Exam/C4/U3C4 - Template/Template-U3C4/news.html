@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    div {
+      width: 75%;
+    }
+
+    img {
+      width: 100%
+    }
+  </style>
+</head>
+
+<body>
+  <!--DO NOT CHANGE THIS ID's-->
+
+  <div id="container">
+    <div id="sidebar">
+      <!--add your sidebar component here-->
+    </div>
+
+    <div id="main">
+      <!--DO NOT CHANGE THIS ID's-->
+      <!--Show the clicked article in detailed format here ONLY-->
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script type="module">
+  import sidebar from "./components/sidebar.js";
+  // console.log('sidebar:', sidebar)
+  let sidebar_div = document.getElementById("sidebar");
+
+  sidebar_div.innerHTML = sidebar();
+
+  let details = JSON.parse(localStorage.getItem("article"))
+  console.log('details:', details)
+
+
+  details.forEach((ele) => {
+
+
+    let div = document.createElement("div");
+
+    let images = document.createElement("img");
+    images.src = ele.urlToImage;
+
+    let titl = document.createElement("p");
+    titl.innerHTML = ele.title;
+
+
+    div.append(images, titl)
+
+    main.append(div);
+
+
+    // let searchinput = document.getElementById("search_bar").addEventListener("keypress", (e) => {
+    //   if (e.key == "Enter") {
+    //     let input_value = document.getElementById("search_bar").value;
+
+    //     localStorage.setItem("search_term", input_value);
+    //     window.location.href = "search.html";
+    //   }
+    //   // console.log("e:", e);
+    // })
+
+  })
+
+
+
+</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  </head>
+  <body>
+    <div id="nav">
+      <div class="nav2">
+        <div>Home</div>
+        <div onclick="window.location.href='signup.html'">Signup</div>
+        <div onclick="window.location.href='login.html'">Login</div>
+      </div>
+    </div>
+
+    <div id="slideshow">
+      <!--Show Slideshow here-->
+      <img
+        class="mySlides"
+        src="https://i.ytimg.com/vi/EXaqGfbiTxc/maxresdefault.jpg"
+      />
+      <img
+        class="mySlides"
+        src="https://images.news18.com/ibnlive/uploads/2021/10/dune-movie-poster-16348832473x2.jpg?impolicy=website&width=510&height=356"
+      />
+      <img
+        class="mySlides"
+        src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/12/matrix-resurrections-original-references.jpg"
+      />
+    </div>
+    <br />
+
+    <div id="sort-buttons">
+      <!--Add sorting here-->
+      <select id="ratingsort">
+        <option value="">Sort by IMDB Rating</option>
+        <option value="high">High to Low</option>
+        <option value="low">Low to High</option>
+      </select>
+    </div>
+
+    <div id="movies">
+      <!--Show list of movies here-->
+    </div>
+  </body>
+</html>
+
+<script src="scripts/index.js"></script>

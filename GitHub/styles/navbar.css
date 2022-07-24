@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+}
+#header {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background-color: black;
+  color: white;
+}
+#logo {
+  width: 5%;
+}
+#logo img,
+#profile img {
+  width: 35px;
+  border-radius: 50%;
+}
+
+#search {
+  width: 10%;
+}
+
+#search_input {
+  padding: 5px;
+}
+
+#options {
+  width: 25%;
+}
+
+#options > ul#list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+#options > ul#list > li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+#profile {
+  width: 60%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+#container > * {
+  border: 1px solid #cecece;
+  display: flex;
+  flex-direction: column;
+}

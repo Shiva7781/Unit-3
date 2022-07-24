@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        #main_header {
+            display: flex;
+        }
+
+        #left_header {
+            display: flex;
+            margin-top: 0.7%;
+            margin-left: 2%;
+        }
+
+        #menu {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .bar1,
+        .bar2,
+        .bar3 {
+            width: 25px;
+            height: 2px;
+            background-color: rgb(163, 146, 146);
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .google_logo img {
+            width: 12%;
+            margin-top: -2.5%;
+        }
+
+        .google_logo {
+            display: flex;
+            margin-left: 1%;
+        }
+
+        .translate {
+            font-size: 27px;
+            color: grey;
+        }
+
+        #right_header img {
+            width: 20%;
+            margin-top: 11%;
+            margin-left: 290%;
+            align-items: flex-end;
+        }
+
+        .hr1 {
+            margin-top: -1%;
+            border: 0.001px solid rgb(230, 223, 223);
+        }
+
+        .hr2 {
+            border: 0.001px solid rgb(230, 223, 223);
+        }
+
+        #three_box {
+            width: 80%;
+            margin-left: 8%;
+        }
+
+        button {
+            border: 1px solid rgb(226, 227, 240);
+            color: rgb(86, 86, 207);
+            width: 8%;
+            background-color: white;
+            height: 30px;
+            border-radius: 6px;
+            gap: 20px;
+        }
+
+        button:hover {
+            color: blue;
+            cursor: pointer;
+        }
+
+        #main_lang {
+            width: 85%;
+            margin: auto;
+            border: 1px solid rgb(204, 202, 202);
+            border-radius: 17px;
+            display: flex;
+        }
+
+        #lang_left {
+            display: flex;
+            gap: 4%;
+            width: 50%;
+            margin: 2%;
+            justify-content: center;
+            margin-left: 15%;
+        }
+
+        .fo4 {
+            color: grey;
+            margin-top: 2%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #lang_right {
+            display: flex;
+            gap: 4%;
+            width: 50%;
+            margin: 2%;
+            margin-left: 15%;
+        }
+
+        #lang_left select {
+            margin-top: -5px;
+        }
+
+        #lang_right select {
+            margin-top: -5px;
+        }
+
+        .btn1 {
+            background-color: #e4ecfa;
+        }
+
+        .lang_design1 {
+            text-decoration: underline;
+            color: rgb(115, 115, 224);
+        }
+
+        .lang_design {
+            cursor: pointer;
+            color: grey;
+        }
+
+        .lang_design:hover {
+            color: black;
+        }
+
+        #container {
+            display: flex;
+            height: 200px;
+            width: 85%;
+            margin: 50px auto;
+            margin-top: -0.1%;
+        }
+
+        #microphone {
+            display: flex;
+            margin: 7px;
+            font-size: 35px;
+
+            color: rgb(71, 71, 248);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #speaker {
+            display: flex;
+            margin: 7px;
+            font-size: 35px;
+
+            color: rgb(71, 71, 248);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #source-lan {
+            width: 100px;
+            height: 30px;
+        }
+
+        #target-lan {
+            width: 100px;
+        }
+
+        #speechToText {
+            width: 15px;
+        }
+
+        #input-section,
+        #output-section {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            height: 100%;
+            border: 1px solid rgb(151, 147, 147);
+            border-radius: 15px;
+        }
+
+        #input-text {
+            height: 99%;
+            font-size: 22px;
+            padding: 8px;
+            border: 1px solid rgb(102, 100, 100);
+        }
+
+        #translated-text {
+            font-size: 22px;
+            color: grey;
+            margin-left: 20px;
+        }
+
+        .footer {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 20px;
+            color: grey;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="main_header">
+
+        <div id="left_header">
+
+            <div id="menu">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+
+            <div class="google_logo">
+                <img src="https://assets.webiconspng.com/uploads/2017/09/Google-PNG-Image-21405.png" alt="">
+                <div class="translate">Translate</div>
+            </div>
+        </div>
+
+
+        <div id="right_header">
+            <div>
+                <img src="https://cdn-icons-png.flaticon.com/128/149/149071.png" alt="">
+            </div>
+        </div>
+
+    </div>
+    <hr class="hr1">
+
+
+    <div id="main_lang">
+
+
+        <div id="lang_left">
+
+            <select name="" id="source-lan" onchange="sourcelan()">
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+                <option value="nl">Dutch</option>
+                <option value="zh">Chinese</option>
+                <option value="it">Italian</option>
+                <option value="de">German</option>
+                <option value="ja">Japanese</option>
+                <option value="ko">Korean</option>
+                <option value="id">Indonesian</option>
+                <option value="fr">French</option>
+                <option value="ru">Russian</option>
+                <option value="hu">Hungarian</option>
+                <option value="ga">Irish</option>
+                <option value="cs">Czech</option>
+            </select>
+        </div>
+
+        <div class="fo4"> <i class="material-icons">swap_horiz</i><br>
+        </div>
+
+        <div id="lang_right">
+
+            <select name="" id="target-lan" onchange="targetlan()">
+                <option value="hi">Hindi</option>
+                <option value="en">English</option>
+                <option value="nl">Dutch</option>
+                <option value="zh">Chinese</option>
+                <option value="it">Italian</option>
+                <option value="de">German</option>
+                <option value="ja">Japanese</option>
+                <option value="ko">Korean</option>
+                <option value="id">Indonesian</option>
+                <option value="fr">French</option>
+                <option value="ru">Russian</option>
+                <option value="hu">Hungarian</option>
+                <option value="ga">Irish</option>
+                <option value="cs">Czech</option>
+            </select>
+        </div>
+    </div>
+
+
+
+
+    <div id="container">
+
+        <div id="input-section">
+
+            <div id="microphone">
+                <button><img id="speechToText" onclick="record()"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/625px-Google_mic.svg.png?20210606084256"
+                        alt="" /></button>
+            </div>
+
+            <textarea name="" oninput="debounce(translateText,1000)" id="input-text" autofocus
+                placeholder="Enter text"></textarea>
+        </div>
+
+        <div id="output-section">
+
+            <div id="speaker">
+                <button><img id="speechToText" onclick="speak()"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtLrTlVPBEWhQFpAv3aUVVp1LE3-QE54MCjA&usqp=CAU"
+                        alt=""></button>
+            </div>
+            <p id="translated-text">Translation</p>
+        </div>
+
+    </div>
+
+
+
+    <div class="footer">
+        <div class="fo1"> <i class="material-icons">history</i><br>
+            <span>History</span>
+        </div>
+
+        <div class="fo2"><i class="material-icons">star_rate</i><br>
+            <span>Saved</span>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+
+<script>
+
+    function sourcelan() {
+        let source = document.querySelector("#source-lan").value;
+        return source;
+    }
+
+    function targetlan() {
+        let target = document.querySelector("#target-lan").value;
+
+        return target;
+    }
+
+    function record() {
+        var recognition = new webkitSpeechRecognition();
+        recognition.lang = "en-GB";
+        recognition.onresult = function (event) {
+            // console.log(event);
+            document.getElementById("input-text").value =
+                event.results[0][0].transcript;
+            translateText();
+        };
+        recognition.start();
+    }
+
+    async function translateText() {
+        let input = document.getElementById("input-text").value;
+        if (input == "") {
+            document.getElementById("translated-text").innerHTML =
+                "Enter Something first!";
+            return;
+        }
+
+        try {
+            let res = await fetch("https://libretranslate.de/translate", {
+                method: "POST",
+                body: JSON.stringify({
+                    q: input,
+                    source: sourcelan(),
+                    target: targetlan(),
+                    format: "text",
+                }),
+
+                headers: {
+                    "Content-Type": "application/json",
+                    // "Content-Type": "application/x-www-form-urlencoded"
+                },
+            });
+
+            let data = await res.json();
+            document.getElementById("translated-text").innerHTML = "";
+            document.getElementById("translated-text").innerHTML =
+                data.translatedText;
+        } catch (error) {
+            console.log("error", error);
+        }
+    }
+
+    // Handling debouncing
+    let timerId;
+
+    function debounce(func, delay) {
+        if (timerId) {
+            clearTimeout(timerId);
+        }
+
+        timerId = setTimeout(function () {
+            func();
+        }, delay);
+    }
+
+
+</script>

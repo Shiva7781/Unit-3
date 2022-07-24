@@ -1,0 +1,54 @@
+<!-- 1. Amar is a singer, lives in Goa.
+
+2. Akbar is a chef, lives in Mumbai.
+
+3. Anthony is a Magician, lives in Kashmir.
+
+4. All three of them are best friends but because of work cannot meet. 
+All of them wants to borrow each other's skills for a while so that they can impress people.
+
+5. We want to make sure they can borrow each other's skill.
+
+6. Create an object for each one of them with relevant methods and properties and 
+see if you could let them borrow using .Call method. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AAA</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const amar = {
+    skill: "Singer",
+    city: "Goa",
+
+    borrow() {
+      console.log(this.skill);
+    },
+  };
+
+  const akbar = {
+    skill: "Chef",
+    city: "Mumbai",
+
+    borrow() {
+      console.log(this.skill);
+    },
+  };
+
+  const anthony = {
+    skill: "Magician",
+    city: "Kashmir",
+
+    borrow() {
+      console.log(this.skill);
+    },
+  };
+
+  amar.borrow.call(akbar);
+
+  akbar.borrow.call(anthony);
+
+  anthony.borrow.call(amar);
+</script>

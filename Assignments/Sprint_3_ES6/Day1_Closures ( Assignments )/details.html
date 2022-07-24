@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <style>
+        #movie_div{
+            margin: auto;
+            width: 20%;
+            /* border: 1px solid blue; */
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            margin-top: 30px;
+        }
+        img{
+            width: 100%;
+        }
+        p{
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="movie"></div>
+</body>
+</html>
+
+<script>
+
+    let local_data = JSON.parse(localStorage.getItem("clicked_movie"))
+    console.log(local_data);
+
+    local_data.forEach((item) =>{
+
+        let div = document.createElement("div")
+        div.setAttribute("id", "movie_div")
+
+        let image = document.createElement("img")
+        image.src = item.Poster
+
+        let title = document.createElement("p")
+        title.textContent = item.Title
+
+        let type = document.createElement('p')
+        type.textContent = `Type of Movie :- ${item.Type}`
+
+        let year = document.createElement("p")
+        year.textContent = item.Year
+
+        div.append(image, title, type, year)
+
+        document.getElementById("movie").append(div)
+    })
+
+
+</script>

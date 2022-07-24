@@ -1,0 +1,47 @@
+#poster {
+    width: 30%;
+    border-radius: 25px;;
+    padding: 10px;;
+}
+
+#detail_box {
+    display: flex;
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: red;
+    margin: -5px;
+}
+
+#content_box {
+    display: flex;
+    /* width: 50%; */
+    margin: auto;
+}
+
+#box1 > p {
+    width: 300px;
+    margin: 0px;
+    padding: 5px;
+
+}
+
+#box2 > p {
+    width: 300px;
+    margin: 0px;
+    padding: 5px;
+}
+
+#button1 {
+    /* border:1px solid red; */
+    margin-left: 100px;
+    padding: 10px;
+}
+
+#Receipe {
+    color: rgb(199, 125, 72);
+}

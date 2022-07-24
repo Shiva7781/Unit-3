@@ -1,0 +1,42 @@
+#moviesDisplay {
+    width: 200px;
+    border: 1px solid black;
+    height: 200px;
+    overflow: scroll;
+    /* float: left; */
+}
+
+img {
+    width: 100px;
+}
+
+.image_box {
+    border: 1px solid red;
+}
+
+p {
+    font-size: 13px;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+#multimovies {
+    /* border: 1px solid red; */
+    width: 230px;
+    margin: auto;
+}
+
+#image2 {
+    width: 100%;
+}
+
+#name {
+    font-size: 17px;
+}
+
+#year {
+    font-size: 17px;
+}

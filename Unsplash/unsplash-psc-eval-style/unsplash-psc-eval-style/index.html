@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<style>
+  #container {
+    display: flex;
+  }
+
+  #sidebar {
+    flex: 2;
+    border: solid 1px black;
+  }
+
+  #main {
+    flex: 8;
+    border: solid 1px black;
+
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    grid-gap: 3%;
+  }
+</style>
+
+<body>
+  <div id="container">
+    <div id="sidebar">
+      <!--DO NOT CHANGE THIS ID's-->
+      <!--Append the horizontal navbar(sidebar) here only-->
+    </div>
+
+    <div id="main">
+      <!--DO NOT CHANGE THIS ID's-->
+      <!--Append top images here only-->
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script type="module">
+  //1. create ui content & export
+  //2. import navbar
+  //3. append
+  //4. get top images
+  //5. import make API Call
+
+  import sidebar from "./components/sidebar.js";
+  // console.log('sidebar:', sidebar)
+
+  import { makeAPICall, appendPicture } from "./scripts/main.js";
+
+  let sidebar_div = document.getElementById("sidebar");
+
+  sidebar_div.innerHTML = sidebar();
+
+  //API : https://api.unsplash.com/photos/?client_id=kmd99hOetq6DlbF_oPFcV2M3fjRB7Co-kZFatNCx7pI
+
+  let images_data = await makeAPICall(
+    `https://api.unsplash.com/photos/?client_id=kmd99hOetq6DlbF_oPFcV2M3fjRB7Co-kZFatNCx7pI
+`
+  );
+  console.log("images_data:", images_data);
+
+  let parent = document.getElementById("main");
+  appendPicture(images_data, parent);
+
+  let input = document.getElementById("searchbar");
+  input.addEventListener("keypress", (e) => {
+    console.log("e:", e);
+
+    if (e.key === "Enter") {
+      let input_value = document.getElementById("searchbar").value;
+
+      localStorage.setItem("search_term", input_value)
+
+      window.location.href = "search.html"
+    }
+  });
+</script>

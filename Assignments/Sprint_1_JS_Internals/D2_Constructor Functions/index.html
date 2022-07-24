@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student's Name</title>
+  </head>
+  <body>
+    <form>
+      <input type="text" placeholder="Enter name" id="name" />
+      <input type="number" placeholder="Enter number" id="number" />
+      <input type="text" placeholder="Enter city" id="city" />
+      <input type="submit" />
+    </form>
+  </body>
+</html>
+<script>
+  document.querySelector("form").addEventListener("submit", submit);
+
+  var arr = JSON.parse(localStorage.getItem("details")) || [];
+
+  function submit(event) {
+    event.preventDefault();
+
+    var name = document.querySelector("#name").value;
+
+    var number = document.querySelector("#number").value;
+
+    var city = document.querySelector("#city").value;
+
+    arr.push(new students(name, number, city));
+
+    var data = localStorage.setItem("Student's_details", JSON.stringify(arr));
+  }
+
+  function students(name, number, city) {
+    this.name = name;
+    this.number = number;
+    this.city = city;
+  }
+</script>
